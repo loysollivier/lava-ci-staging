@@ -2,13 +2,13 @@
 {% block actions %}
 {{ super () }}
 
-  - test:
-      timeout:
-        minutes: 2
-      definitions:
-      - repository: git://github.com/jeromebrunet/lava-test.git
-        from: git
-        name: ping-gateway
-        path: functional/ping-gateway.yaml
+- test:
+    timeout:
+      minutes: 2
+    definitions:
+    - repository: git://github.com/jeromebrunet/lava-test.git
+      from: git
+      name: ping-gateway
+      path: functional/ping-gateway.yaml
 
 {% endblock %}
