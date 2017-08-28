@@ -1,0 +1,14 @@
+{% extends 'boot/generic-uboot-tftp-ramdisk-template.jinja2' %}
+{% block actions %}
+{{ super () }}
+
+- test:
+    timeout:
+      minutes: 2
+    definitions:
+    - repository: git://github.com/loysollivier/lava-test-definitions.git
+      from: git
+      name: log-tests
+      path: smoketests/log/log-tests.yaml
+
+{% endblock %}
